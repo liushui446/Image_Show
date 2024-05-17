@@ -4,6 +4,8 @@
 #include <QMainWindow>
 #include <QGraphicsScene>
 #include <QGraphicsView>
+#include <qsettings.h>
+
 
 namespace Ui {
 class MyWidget;
@@ -22,6 +24,8 @@ public:
     void ShowLabel_Now(QImage img);
     void Files_Parser(QString path);
     void LoadImage(int index,bool show_type);
+    void iniUI();
+    void GetIniFile();
 private slots:
     void on_pushButton_1_clicked();
 
@@ -44,14 +48,22 @@ private:
     QGraphicsView* image_graphicsView;    // 视窗
     QString m_common_path;
     QStringList image_name = {
-        QString("640.jpg"),
-        QString("641.jpg"),
-        QString("642.jpg"),
-        QString("643.jpg"),
-        QString("644.jpg"),
-        QString("645.jpg"),
+        QString("Enhanced.jpg"),
+        QString("openedIntersection.jpg"),
+        QString("mask.jpg"),
+        QString("commonRegion.jpg"),
+        QString("maxContourImg.jpg"),
+        QString("11.jpg"),
     };
+    QString n_2 = QString("Enhanced.jpg");
+    QString n_3 = QString("openedIntersection.jpg");
+    QString n_4 = QString("mask.jpg");
+    QString n_5 = QString("commonRegion.jpg");
+    QString n_6 = QString("maxContourImg.jpg");
+    QString n_7 = QString("11.jpg");
     QString m_origin_path;
+
+    QSettings *m_settings = nullptr;
 };
 
 #endif // MYWIDGET_H
